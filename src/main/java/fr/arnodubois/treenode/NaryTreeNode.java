@@ -1,4 +1,4 @@
-package com.jad.treenode;
+package fr.arnodubois.treenode;
 
 import com.google.gson.Gson;
 
@@ -29,19 +29,19 @@ public class NaryTreeNode<E> {
 
     /**
      * Instantiates a new Nary tree node.
+     */
+    public NaryTreeNode() {
+        this(null);
+    }
+
+    /**
+     * Instantiates a new Nary tree node.
      *
      * @param value the value
      */
     public NaryTreeNode(final E value) {
         this.value = value;
         this.children = new LinkedList<>();
-    }
-
-    /**
-     * Instantiates a new Nary tree node.
-     */
-    public NaryTreeNode() {
-        this(null);
     }
 
     /**
@@ -66,7 +66,6 @@ public class NaryTreeNode<E> {
      * Gets child.
      *
      * @param index the index
-     *
      * @return the child
      */
     public NaryTreeNode<E> getChild(final int index) {
@@ -85,19 +84,19 @@ public class NaryTreeNode<E> {
     /**
      * Add child.
      *
-     * @param child the child
+     * @param childValue the child value
      */
-    public void addChild(final NaryTreeNode<E> child) {
-        this.children.add(child);
+    public void addChild(final E childValue) {
+        this.addChild(new NaryTreeNode<>(childValue));
     }
 
     /**
      * Add child.
      *
-     * @param childValue the child value
+     * @param child the child
      */
-    public void addChild(final E childValue) {
-        this.addChild(new NaryTreeNode<>(childValue));
+    public void addChild(final NaryTreeNode<E> child) {
+        this.children.add(child);
     }
 
     /**
@@ -157,7 +156,6 @@ public class NaryTreeNode<E> {
      * Contains boolean.
      *
      * @param value the value
-     *
      * @return the boolean
      */
     public boolean contains(final E value) {

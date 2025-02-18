@@ -1,4 +1,4 @@
-package com.jad.treenode;
+package fr.arnodubois.treenode;
 
 import org.junit.jupiter.api.Test;
 
@@ -198,18 +198,18 @@ public class NaryTreeNodeTest {
         final NaryTreeNode<String> subSubChild211 = new NaryTreeNode<>("subSubChild211");
         assertEquals("""
                 root
-                 """, treeNode.toPrettyText());
+                """, treeNode.toPrettyText());
         treeNode.addChild(child1);
         assertEquals("""
                 root
                 |-child1
-                 """, treeNode.toPrettyText());
+                """, treeNode.toPrettyText());
         treeNode.addChild(child2);
         assertEquals("""
                 root
                 |-child1
                 |-child2
-                 """, treeNode.toPrettyText());
+                """, treeNode.toPrettyText());
         child1.addChild(subChild11);
         child1.addChild(subChild12);
         assertEquals("""
@@ -218,7 +218,7 @@ public class NaryTreeNodeTest {
                   |-subChild11
                   |-subChild12
                 |-child2
-                                 """, treeNode.toPrettyText());
+                """, treeNode.toPrettyText());
         child2.addChild(subChild21);
         child2.addChild(subChild22);
         assertEquals("""
@@ -229,7 +229,7 @@ public class NaryTreeNodeTest {
                 |-child2
                   |-subChild21
                   |-subChild22
-                 """, treeNode.toPrettyText());
+                """, treeNode.toPrettyText());
         subChild21.addChild(subSubChild211);
         treeNode.addChild(child3);
         assertEquals("""
